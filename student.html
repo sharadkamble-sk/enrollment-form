@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style for the passport size photo */
+        .img-fluid {
+            width: 4.5cm;
+            /* Adjust the width as needed */
+            height: 6cm;
+            /* Adjust the height as needed */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the container */
+            border: 1px solid #ccc;
+            /* Optional: Add a border around the photo */
+            margin-bottom: 20px;
+            margin-right: 50px;
+        }
+
+        /* Style to hide "Browse" text */
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .custom-file-input::before {
+            content: 'Choose Photo';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .custom-file-input:hover::before {
+            border-color: black;
+        }
+
+        .custom-file-input:active::before {
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+        }
+
+        /* Custom styles for horizontal image */
+        .horizontal-image {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .horizontal-image img {
+            max-width: 100%;
+            /* height: 50%; */
+            height: 130px;
+            margin: 20px;
+        }
+
+        .fixed-heading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            /* Set the background color as needed */
+            z-index: 1000;
+            /* Adjust the z-index as needed to ensure it appears above other content */
+            padding: 10px;
+            /* Add padding to create spacing around the heading */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container border my-2" style="width: 70rem;">
+        <!-- <div class="row">
+            <div class="col-8">col-8<4div>
+            <div class="col-4">col-4</div>
+          </div> -->
+
+        <div class="horizontal-image">
+            <img src="header.png" alt="Horizontal Image" class="img-" style="width: 200rem;" >
+        </div>
+        <hr>
+
+
+       
+        <div class="col-md-12">  <h3 class="text-center">Student Enrollment Form</h3></div>
+        <div class="form-group d-none" id="displayPhotoSection">
+            <label for="uploadedPhoto"></label>
+            <label id="clickToChangeLabel" class="float-right" style="cursor: pointer;"></label>
+            <img id="uploadedPhoto" class="img-fluid float-right" src="#" alt="Uploaded Photo">
+        </div>
+      
+
+
+        <!-- Display Uploaded Photo -->
+
+        <div class="form-group text-right">
+            <label for="photo"></label>
+            <div class="custom-file col-12" style="width: 195px;">
+                <input type="file" class="custom-file-input" id="photo" name="photo" accept="image/*">
+                <label class="custom-file-label text-left" for="photo" id="photoLabel">Upload Photo</label>
+            </div>
+        </div>
+        <!-- <div class="form-group d-none" id="displayPhotoSection">
+            <label for="uploadedPhoto"></label>
+            <label id="clickToChangeLabel" class="float-right" style="cursor: pointer;"></label>
+            <img id="uploadedPhoto" class="img-fluid float-right" src="#" alt="Uploaded Photo">
+        </div> -->
+
+
+        <form method="POST" action="student.php" class="m-5">
+            <div class="form-group">
+                <!-- <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 mb-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <label for="admissionType" class="m-1">This admission is to be considered for:</label>
+                                    
+                                </div>
+                                <div class="col-4 flex-fill text-right">
+                                    <label for="admissionType" class="m-1">R.D code :</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-3" style="width: 20px;">
+                            <input type="text"  class="form-control" id="admissionType" name="admissionType" placeholder="Enter reference discount code">
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <label for="Training Course">Training course for:</label> -->
+                <div class="form-group row" style="margin-top: 150px;">
+                    <label class="col-sm-4 col-form-label">
+                        <h5>Training course for :</h5>
+                    </label>
+                    <div class="col-sm-6 ">
+                        <select class="form-control" id="trainingCourse" name="trainingCourse">
+                            <option value="" selected>Select the course</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Digital Marketing + Web Development">Digital Marketing + Web Development
+                            </option>
+                            <option value="Full Stack Development(java/phython)">Full Stack Development(java/phython)
+                            </option>
+                            <option value="Data Science (Basic to Advance)">Data Science(Basic to Advance)</option>
+                            <option value="(Integrated) Data Science">(Integrated) Data Science</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="PMO">PMO</option>
+                            <option value="SAP S4 hana">SAP S4 hana</option>
+                            <option value="Salesforce(including certification)">Salesforce(including certification)
+                            </option>
+                            <option value="AWS">AWS</option>
+                            <option value="Power BI">Power BI</option>
+                            <option value="Soft Testing">Software Testing</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <p class="h5">A) Personal Particulars :</p>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="middle_name">Middle Name:</label>
+                    <input type="text" class="form-control" id="middleName" name="middleName" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="date_of_birth">Date of Birth:</label>
+                        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control" id="age" name="age" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="mothersName">Mother's Name:</label>
+                        <input type="text" class="form-control" id="mothersName" name="mothersName" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="mobile">Mobile:</label>
+                        <input type="number" class="form-control" id="mobile" name="mobile" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" class="form-control" id="middleName" name="middleName" required>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div> -->
+
+            <!-- <div class="form-group">
+               
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mothersName">Mother's Name:</label>
+                <input type="text" class="form-control" id="mothersName" name="mothersName" required>
+            </div> -->
+
+
+
+
+
+            <!-- <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="number" class="form-control" id="mobile" name="mobile" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div> -->
+
+
+
+            <div class="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="permanentAddress">Permanent Address:</label>
+                        <textarea class="form-control" id="permanentAddress" name="permanentAddress"
+                            required></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="correspondenceAddress">Correspondence Address:</label>
+                        <textarea class="form-control" id="correspondenceAddress" name="correspondenceAddress"
+                            required></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="form-group">
+                <label for="permanentAddress">Permanent Address:</label>
+                <textarea class="form-control" style="resize: none;" id="permanentAddress" name="permanentAddress"
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="correspondenceAddress">Correspondence Address:</label>
+                <textarea class="form-control" style="resize: none;" id="correspondenceAddress"
+                    name="correspondenceAddress" required></textarea>
+            </div>
+
+            <hr> -->
+            <div class="form-group mt-3">
+                <p class="h5">B) Health Information:</p>
+            </div>
+            <hr>
+
+            <div class="container mb-3">
+                <div class="form-group row">
+                    <label for="physicallyChallenged">Physically Challenged:</label>
+                    <div class="col-sm-3 ">
+                        <select class="form-control" id="physicallyChallenged" name="physicallyChallenged" required>
+                            <option value="" selected>Select an option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Educational Information -->
+            <hr>
+            <div class="form-group">
+                <p class="h5">C) Educational Information:</p>
+            </div>
+            <hr>
+            <div class="table-responsive form-group">
+                <table class="table table-bordered  table-striped">
+                    <thead>
+                        <tr>
+                            <th>Institute Name</th>
+                            <th>Place</th>
+                            <th>University</th>
+                            <th>Percentage</th>
+                            <th>Year of Passing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="ssc_instituteName" id="ssc_instituteName">
+                                    <option value="SSC">SSC</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control" id="place" name="ssc_place" required></td>
+                            <td><input type="text" class="form-control" id="university" name="ssc_university" required>
+                            </td>
+                            <td><input type="number" class="form-control" id="percentage" name="ssc_percentage"
+                                    step="0.01" min="0" max="100" required></td>
+                            <td><input type="number" class="form-control" id="yearOfPassing" name="ssc_yearOfPassing"
+                                    required></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="hsc_instituteName" id="hsc_instituteName">
+                                    <option value="HSC">HSC</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control" id="place" name="hsc_place" required></td>
+                            <td><input type="text" class="form-control" id="university" name="hsc_university" required>
+                            </td>
+                            <td><input type="number" class="form-control" id="percentage" name="hsc_percentage"
+                                    step="0.01" min="0" max="100" required></td>
+                            <td><input type="number" class="form-control" id="yearOfPassing" name="hsc_yearOfPassing"
+                                    required></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="graduation_instituteName"
+                                    id="graduation_instituteName">
+                                    <option value="Graduation">Graduation</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control" id="place" name="graduation_place" required>
+                            </td>
+                            <td><input type="text" class="form-control" id="university" name="graduation_university"
+                                    required></td>
+                            <td><input type="number" class="form-control" id="percentage" name="graduation_percentage"
+                                    step="0.01" min="0" max="100" required></td>
+                            <td><input type="number" class="form-control" id="yearOfPassing"
+                                    name="graduation_yearOfPassing" required></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="postgraduation_instituteName"
+                                    id="postgraduation_instituteName">
+                                    <option value="Post Graduation">Post Graduation</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control" id="place" name="postgraduation_place" required>
+                            </td>
+                            <td><input type="text" class="form-control" id="university" name="postgraduation_university"
+                                    required></td>
+                            <td><input type="number" class="form-control" id="percentage"
+                                    name="postgraduation_percentage" step="0.01" min="0" max="100" required></td>
+                            <td><input type="number" class="form-control" id="yearOfPassing"
+                                    name="postgraduation_yearOfPassing" required></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5 class="mb-3">D) Achievements and Extra Curricular Activity Details</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Achievements/Scholarship/Prizes</th>
+                            <th>Extra-Curricular Activities</th>
+                            <th>Hobbies and Intersts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" name="achievement_text" required></td>
+                            <td><input type="text" class="form-control" name="activity_text" required></td>
+                            <td><input type="text" class="form-control" name="hobbies_interests_text" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+
+            <h5 class="mb-3">E) Lingual Skills</h5>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Languages</th>
+                        <th>Read</th>
+                        <th>Write</th>
+                        <th>Speak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>English</td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_read" name="english_read"
+                                    value="English">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_write" name="english_write"
+                                    value="English">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_speak" name="english_speak"
+                                    value="English">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Hindi</td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_read" name="hindi_read"
+                                    value="Hindi">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_write" name="hindi_write"
+                                    value="Hindi">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_speak" name="hindi_speak"
+                                    value="Hindi">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Marathi</td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_read" name="marathi_read"
+                                    value="Marathi">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="can_write" name="marathi_write"
+                                    value="Marathi">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="form-check-input " id="can_speak" name="marathi_speak"
+                                    value="Marathi">
+                                <!-- <label class="custom-control-label" for="customCheck1"></label> -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+
+
+            <!-- References section -->
+            <h5 class="mb-3">F) References</h5>
+            <p>
+                <li>Name and Address of two references whom you know well and who know you well</li>
+            </p>
+            <!-- first reference -->
+            <p>
+                <li>First reference should be your family member only</li>
+            </p>
+            <!-- <div class="form-group">
+                <label for="familyName">Name:</label>
+                <input type="text" class="form-control" id="familyName" name="first_ref_name" required>
+            </div>
+            <div class="form-group">
+                <label for="familyAddress">Address:</label>
+                <input type="text" class="form-control" id="familyAddress" name="first_ref_address" required>
+            </div>
+            <div class="form-group">
+                <label for="familyRelation">Relation:</label>
+                <input type="text" class="form-control" id="familyRelation" name="first_ref_relation" required>
+            </div>
+            <div class="form-group">
+                <label for="familyPhone">Mobile No:</label>
+                <input type="number" class="form-control" id="familyPhone" name="first_ref_mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="familyEmail">Email:</label>
+                <input type="email" class="form-control" id="familyEmail" name="first_ref_email" required>
+            </div>
+            <br> -->
+
+            <div class="">
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="familyName">Name:</label>
+                        <input type="text" class="form-control" id="familyName" name="first_ref_name" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="familyRelation">Relation:</label>
+                        <input type="text" class="form-control" id="familyRelation" name="first_ref_relation" required>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="familyPhone">Mobile No:</label>
+                            <input type="number" class="form-control" id="familyPhone" name="first_ref_mobile" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="familyEmail">Email:</label>
+                        <input type="email" class="form-control" id="familyEmail" name="first_ref_email" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="familyAddress">Address:</label>
+                        <textarea class="form-control" id="familyAddress" name="first_ref_address" required></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- second references -->
+            <p>
+                <li>Second Reference Should be your Friends</li>
+            </p>
+            <!-- <div class="form-group">
+                <label for="familyName">Name:</label>
+                <input type="text" class="form-control" id="familyName" name="second_ref_name" required>
+            </div>
+            <div class="form-group">
+                <label for="familyAddress">Address:</label>
+                <input type="text" class="form-control" id="familyAddress" name="second_ref_address" required>
+            </div>
+            <div class="form-group">
+                <label for="familyRelation">Relation:</label>
+                <input type="text" class="form-control" id="familyRelation" name="second_ref_relation" required>
+            </div>
+            <div class="form-group">
+                <label for="familyPhone">Mobile No:</label>
+                <input type="number" class="form-control" id="familyPhone" name="second_ref_mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="familyEmail">Email:</label>
+                <input type="email" class="form-control" id="familyEmail" name="second_ref_email" required>
+            </div> -->
+
+
+
+
+
+
+
+            <div class="">
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="familyName">Name:</label>
+                        <input type="text" class="form-control" id="familyName" name="second_ref_name" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="familyRelation">Relation:</label>
+                        <input type="text" class="form-control" id="familyRelation" name="second_ref_relation" required>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="familyPhone">Mobile No:</label>
+                            <input type="number" class="form-control" id="familyPhone" name="second_ref_mobile"
+                                required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="familyEmail">Email:</label>
+                        <input type="email" class="form-control" id="familyEmail" name="second_ref_email" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="familyAddress">Address:</label>
+                        <textarea class="form-control" id="familyAddress" name="second_ref_address" required></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <h5 class="mb-3">G) Experience</h5>
+            <div class="container">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="experience" id="radio-yes" value="yes"
+                        onchange="toggleExperienceTable(true)">
+                    <label class="form-check-label" for="radio-yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="experience" id="radio-no" value="no"
+                        onchange="toggleExperienceTable(false)">
+                    <label class="form-check-label" for="radio-no">No</label>
+                </div>
+            </div>
+
+
+
+            <div id="experience-table">
+                <h5 class="mt-3">Experience Details:<h6>[Latest Experience]</h6>
+                </h5>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr No</th>
+                            <th scope="col">Organization</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1 </td>
+                            <td><input type="text" class="form-control" name="organization" required></td>
+                            <td><input type="text" class="form-control" name="designation" required></td>
+                            <td><input type="date" class="form-control" name="from_date" required></td>
+                            <td><input type="date" class="form-control" name="to_date" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+
+
+
+
+
+
+
+            <!-- Preferred Location section -->
+            <h5 class="mb-3">H) Preferred Location for Job</h5>
+            <div class="form-check form-check-inline ml-4">
+                <label class="form-check-label"><input type="checkbox" class="form-check-input" name="pune"
+                        value="Pune"> Pune</label>
+            </div>
+            <div class="form-check form-check-inline ml-4">
+                <label class="form-check-label"><input type="checkbox" class="form-check-input" name="mumbai"
+                        value="Mumbai"> Mumbai</label>
+            </div>
+            <div class="form-check form-check-inline ml-4 mb-3">
+                <label class="form-check-label"><input type="checkbox" class="form-check-input" name="bangalore"
+                        value="Bangalore"> Bangalore</label>
+            </div>
+
+
+            <!-- Preferred payment section -->
+            <div class="form-group">
+                <h5>I) Payment Details:</h5>
+            </div>
+            <hr>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Course Name:</label>
+                        <select class="form-control" id="courseName" name="courseName">
+                            <option value="" selected>select</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Digital Marketing + Web Development">Digital Marketing + Web Development
+                            </option>
+                            <option value="Full Stack Development(java/phython)">Full Stack Development(java/phython)
+                            </option>
+                            <option value="Data Science (Basic to Advance)">Data Science(Basic to Advance)</option>
+                            <option value="(Integrated) Data Science">(Integrated) Data Science</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="PMO">PMO</option>
+                            <option value="SAP S4 hana">SAP S4 hana</option>
+                            <option value="Salesforce(including certification)">Salesforce(including certification)
+                            </option>
+                            <option value="AWS">AWS</option>
+                            <option value="Power BI">Power BI</option>
+                            <option value="Soft Testing">Software Testing</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Course Fees:</label>
+                        <input type="number" class="form-control" id="courseFees" name="courseFees" placeholder="Rs/-"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <hr>
+
+            <div class="table-responsive form-group">
+                <table class="table table-bordered  table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fee</th>
+                            <th>Amount</th>
+                            <th>Schedule</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control" id="fee" name="fee">
+                                    <option value="" selected>select</option>
+                                    <option value="Enrollment Fee">Enrollment Fee</option>
+                                    <option value="Trainig Fee">Training Fee</option>
+
+                                </select>
+                            </td>
+                            <td><input type="number" class="form-control" id="amount" name="amount" placeholder="Rs/-"
+                                    required></td>
+                            <td>
+                                <select class="form-control" id="Schedule" name="Schedule">
+                                    <option value="" selected>select</option>
+                                    <option value="At the time of Enrollment">At the time of Enrollment</option>
+                                    <option value=" During the Trainig only">During the Training only</option>
+
+                                </select>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="mb-3">Enrollment Fees Payment Detail:</h4>
+            <div class="form-group form-inline">
+                <label class="mr-2" for="enrollmentFess">Payment Mode:</label>
+                <select class="form-control mr-2" id="enrollmentFess" name="enrollmentFess" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Online">Online</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Cheque">Cheque</option>
+                    <option value="Card">Card</option>
+                </select>
+            </div>
+
+
+
+
+
+            <h4 class="">Training/Course Fees Payment Mode:</h4>
+            <div class="checkbox">
+                <label><input type="checkbox" name="oneTime" value="One Time" id="oneTimeCheckbox"> One Time (Fess to be
+                    paid within 8 days
+                    of registration)</label>
+            </div>
+            <div class="form-check hidden" id="agreeContinueCheckbox">
+                <input class="form-check-input" type="checkbox" id="agreeCheckbox">
+                <label class="form-check-label fs-2" for="agree-checkbox"> I confirm that I have read, understood, and
+                    agree to the above terms and conditions.</label>
+            </div>
+
+
+            <div class="checkbox">
+                <label><input type="checkbox" name="EMI" value="EMI" id="emiCheckbox"> EMI(Fees to be paid in 3
+                    installment,within 60 days
+                    of registration
+                    amount):</label>
+            </div>
+
+
+
+            <div class="table-responsive form-group">
+                <table class="table table-bordered  table-striped">
+                    <thead>
+                        <tr>
+                            <th>EMI</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="EMI_NO_1" id="EMI_NO_1">
+                                    <option value="EMI NO 1">EMI NO 1</option>
+                                </select>
+                            </td>
+                            <td><input type="date" class="form-control" id="selectedDate" min="" max=""
+                                    name="EMI_NO_1_date" required></td>
+                            <td>
+                                <input type="number" class="form-control" id="Amount" name="EMI_NO_1_Amount"
+                                    placeholder="Rs/-" required>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="EMI_NO_2" id="EMI_NO_2">
+                                    <option value="EMI NO 2">EMI NO 2</option>
+                                </select>
+                            </td>
+                            <td><input type="date" class="form-control" id="dateSecondEmi" min="" max=""
+                                    name="EMI_NO_2_date" required></td>
+                            <td>
+                                <input type="number" class="form-control" id="Amount" name="EMI_NO_2_Amount"
+                                    placeholder="Rs/-" required>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="EMI_NO_3" id="EMI_NO_3">
+                                    <option value="EMI NO 3">EMI NO 3</option>
+                                </select>
+                            </td>
+                            <td><input type="date" class="form-control" id="dateThirdEmi" min="" max=""
+                                    name="EMI_NO_3_date" required></td>
+                            <td>
+                                <input type="number" class="form-control" id="Amount" name="EMI_NO_3_Amount"
+                                    placeholder="Rs/-" required>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div class="checkbox">
+                <label><input type="checkbox" name="loan" value="Loan"> Loan (Documents to be Submitted within 8 days of
+                    registration)</label>
+            </div>
+            <div id="agreeContinueCheckbox1" class="form-check pb-3 hidden">
+                <input class="form-check-input" type="checkbox" id="agreeCheckbox">
+                <label class="form-check-label fs-2" for="agree-checkbox"> I confirm that I have read, understood, and
+                    agree to the above terms and conditions.</label>
+            </div>
+            <hr>
+
+            <h4 class="mb-3">RULES AND REGULATIONS:</h4>
+            <hr>
+            <h5>A. Payment Schedule:</h5>
+            • Enrollment fee needs to be deposited with Enrollment Form • Fee is Non Refundable under any
+            circumstances.<br>
+            • Radiant IT Services PVT LTD will only introduce the student to BANK for the loan
+            procedure.<br>
+            • Initiating and completing the loan procedure within stipulated time is the sole responsibility of the
+            student.<br>
+            • Submitting the required documents for the loan procedure and arranging
+            suitable guarantor, as required by BANK is the sole responsibility of the student.<br>
+            • Students have to pay a full course within 60 days of the start of the batch; to continue in the batch.<br>
+            • Applicants need to make the necessary payment as per the prescribed dates. <br>
+            • Incase applicant fails to pay training fees, the admission would be
+            canceled without refund of any kind. <br>
+            All Fees transactions to be carried out to Radiant Account provided by
+            the management, any transaction to personal account shall not be considered.<br>
+            • Cheque/DD to be drawn in favor of "RADIANT IT SERVICES PVT LTD"<br>
+            <br>
+            <h4>B. Fees Excursions:</h4>
+            • The fee does not cover the prospectus cost, industrial visits, excursions, pocket money, extra
+            subject/learning
+            support, weekend outing/trips, transportation,
+            workshops/seminars, extra tutorial and medical expenses of any sort.<br>
+            • The fee is applicable for the training program being conducted by RADIANT IT SERVICES PVT LTD. <br>
+            •RADIANT IT SERVICES PVT LTD reserves the right to revise or amend the fee
+            schedule, if required.<br>
+            <br>
+            <h4>C. Students Decorums:</h4>
+            •The student is expected to maintain discipline and decorum at all times.<br>
+            •The RADIANT IT SERVICES PVT LTD reserves the right to cancel the admission
+            without a refund in case the student fails to abide by the rules and regulations of RADIANT IT SERVICES PVT
+            LTD.<br>
+            • The fee payment should be made in due time period as notified to students.<br>
+            In case of a loan getting rejected by the bank it is the responsibility of the student to search for options
+            for fee
+            payment.<br>
+            <br>
+            <h4>D. Students Decorums: </h4>
+            •Students have to submit a soft copy of their Educational documents to RADIANT
+            IT SERVICES PVT LTD. Students will not be allowed to sit for the batch unless
+            and until the documents are submitted for verification.<br>
+            • It is mandatory for the student to appear for all the assessments during and after the
+            training sessions.<br>
+            • Students are required to appear on the interviews on the mentioned dates as
+            informed by the placement department at any location.<br>
+            • The student is supposed to join the organization at any location for which he/she
+            has been selected on the mentioned date as informed.<br>
+            •Students understand that salary packages and job location may vary; It is not in control of the institute.
+            It is
+            the responsibility of the student to earn a higher package by virtue of performance.<br>
+            • Students are expected to follow and fulfill the attendance required during the entire duration of the
+            program.
+            Students cannot take more than two leaves in a month. If a student fails to inform RADIANT IT SERVICES PVT
+            LTD, hr /
+            management and take permission about his absence for more than 3 times, this will be taken as a serious
+            behavioral
+            issue and may lead to cancellation of agreement and without refund of fees and students support amount will
+            be
+            stopped with immediate effect.<br>
+            • RADIANT IT SERVICES PVT LTD reserves the right to take necessary action
+            (civil or criminal) if a student is found indulged in immoral activities.<br>
+            •Students should not participate in any political activities or from union or group and should not be part
+            of any
+            political gathering, during his tenure with RADIANT IT SERVICES PVT LTD.<br>
+            • The admission stands canceled in case of data infringement, circulating RADIANT IT SERVICES PVT LTD
+            printed non
+            printed material outside. In case of sharing training patterns and modules to third parties or starting
+            their own
+            competitive business similar to the business model of RADIANT IT SERVICES PVT LTD or its associates.<br>
+            <br>
+
+            <h4>E. Important Information and Instructions:</h4>
+            1. Do not send original documents/ mark sheets/ certificates by post or courier.<br>
+            2. The application form will be processed only on submission of copies of
+            all documents and records mentioned. <br>
+            3. Admission is subject to fulfillment of the criteria and availability of seats.<br>
+            4. No terms and conditions mentioned above will be waived under any circumstances whatsoever.<br>
+            <br>
+            <h3>Undertaking</h3>
+            I hereby undertake I have applied for the Training Program with RADIANT IT SERVICES PVT LTD. I understand
+            that fees
+            paid are the charges of training, Job/ placement call is a free service offered by RADIANT IT SERVICES PVT
+            LTD to
+            all the students and there is no cost involved for placements. I have read the rules & regulations of
+            RADIANT IT
+            SERVICES PVT LTD and shall abide by them in letter and spirit. I shall also abide by the rules modified or
+            framed in
+            future. I shall pay the fees and other changes before specified dates. I shall submit my original documents
+            for
+            verification when informed and can be shared with employer companies. I understand that a
+            payment made is not refundable. I shall abide by the rules and regulations mentioned above and
+            also mentioned in agreement. This undertaking abides with me for my entire program duration.
+
+            </p>
+
+            <footer>
+
+                <p>Radiant IT Services Pvt. Ltd.<br>
+                    Kolte Patil, Downtown City Vista, Office No. 13/14, 6th Floor, "B" Building, Fountain Road, opp.
+                    Victorious Kids School, Kharadi, Pune, Maharashtra 411014</p>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="file" id="signature" name="signature">
+
+                            Signature of Candidate
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" id="date_submission" name="date_submission">
+
+                            Date
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+                <div class="form-check py-2">
+                    <input class="form-check-input" type="checkbox" id="agree-checkbox">
+                    <label class="form-check-label fs-2" for="agree-checkbox">I have read and Agreed to Radiant's
+                        Terms,Conditions and Privacy Policy.</label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+            </footer>
+        </form>
+
+
+
+
+        <!-- Include Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- For Experience  -->
+        <script>
+            function toggleExperienceTable(showTable) {
+                var experienceTable = document.getElementById("experience-table");
+                experienceTable.style.display = showTable ? "block" : "none";
+            }
+        </script>
+        <!-- For oneTime checkbox -->
+        <script>
+            const oneTimeCheckbox = document.getElementById("oneTimeCheckbox");
+            const agreeContinueCheckbox = document.getElementById("agreeContinueCheckbox");
+
+            oneTimeCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    agreeContinueCheckbox.classList.remove("hidden");
+                } else {
+                    agreeContinueCheckbox.classList.add("hidden");
+                }
+            });
+        </script>
+        <!-- for emi checkbox -->
+        <script>
+            const emiCheckbox = document.getElementById("emiCheckbox");
+            const agreeContinueCheckbox1 = document.getElementById("agreeContinueCheckbox1");
+
+            emiCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    agreeContinueCheckbox1.classList.remove("hidden");
+                } else {
+                    agreeContinueCheckbox1.classList.add("hidden");
+                }
+            });
+        </script>
+        <!-- For Date section -->
+        <script>
+            var today = new Date();
+            var maxDate = new Date();
+            maxDate.setDate(today.getDate() + 60);
+
+            var selectedDateInput = document.getElementById("selectedDate");
+            selectedDateInput.min = today.toISOString().split("T")[0];
+            selectedDateInput.max = maxDate.toISOString().split("T")[0];
+        </script>
+
+
+        <script>
+            var today = new Date();
+            var maxDate = new Date();
+            maxDate.setDate(today.getDate() + 60);
+
+            var selectedDateInput = document.getElementById("dateSecondEmi");
+            selectedDateInput.min = today.toISOString().split("T")[0];
+            selectedDateInput.max = maxDate.toISOString().split("T")[0];
+        </script>
+
+        <script>
+            var today = new Date();
+            var maxDate = new Date();
+            maxDate.setDate(today.getDate() + 60);
+
+            var selectedDateInput = document.getElementById("dateThirdEmi");
+            selectedDateInput.min = today.toISOString().split("T")[0];
+            selectedDateInput.max = maxDate.toISOString().split("T")[0];
+        </script>
+
+
+
+        <script type="text/javascript">
+            function validateForm() {
+                var agreeCheckbox = document.getElementById("agree-checkbox");
+                if (!agreeCheckbox.checked) {
+                    alert("Please agree to continue by checking the 'Agree and Continue' box.");
+                    return false;
+                }
+                return true;
+            }
+
+            // Enable the submit button when the checkbox is checked
+            document.getElementById("agree-checkbox").addEventListener("change", function () {
+                document.getElementById("submit-btn").disabled = !this.checked;
+            });
+        </script>
+        <!-- <script>
+            // Display uploaded photo and manage label visibility
+            const photoInput = document.getElementById('photo');
+            const displayPhotoSection = document.getElementById('displayPhotoSection');
+            const uploadedPhoto = document.getElementById('uploadedPhoto');
+
+            photoInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    uploadedPhoto.src = URL.createObjectURL(file);
+                    displayPhotoSection.classList.remove('d-none'); // Show the section
+                    alert('Photo uploaded successfully!');
+                } else {
+                    uploadedPhoto.src = '#';
+                    displayPhotoSection.classList.add('d-none'); // Hide the section
+                }
+            });
+        </script>
+         -->
+        <script>
+            // Display uploaded photo and manage label visibility
+            const photoInput = document.getElementById('photo');
+            const displayPhotoSection = document.getElementById('displayPhotoSection');
+            const uploadedPhoto = document.getElementById('uploadedPhoto');
+            const photoLabel = document.getElementById('photoLabel');
+
+            photoInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    uploadedPhoto.src = URL.createObjectURL(file);
+                    displayPhotoSection.classList.remove('d-none'); // Show the section
+                    photoLabel.style.display = 'none'; // Hide the upload photo label
+                    clickToChangeLabel.style.display = 'block'; // Show the "Click to change" label
+                    alert('Photo uploaded successfully!');
+                } else {
+                    uploadedPhoto.src = '#';
+                    displayPhotoSection.classList.add('d-none'); // Hide the section
+                    photoLabel.style.display = 'block'; // Show the upload photo label
+                    clickToChangeLabel.style.display = 'none'; // Hide the "Click to change" label
+                }
+            });
+
+            // Allow users to replace the photo by clicking on the image
+            uploadedPhoto.addEventListener('click', function () {
+                photoInput.click(); // Trigger the file input click
+            });
+        </script>
+
+
+</body>
+
+</html>
