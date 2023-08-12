@@ -79,30 +79,29 @@
 </head>
 
 <body>
-    <div class="container border my-2" style="width: 70rem;">
+    <div class="container border my-2" style="width: 57rem;">
         <!-- <div class="row">
             <div class="col-8">col-8<4div>
             <div class="col-4">col-4</div>
           </div> -->
 
         <div class="horizontal-image">
-            <img src="header.png" alt="Horizontal Image" class="img-" style="width: 200rem;" >
+            <img src="header.png" alt="Horizontal Image" class="img-" style="width: 200rem;">
         </div>
         <hr>
 
 
-       
-        <div class="col-md-12">  <h3 class="text-center">Student Enrollment Form</h3></div>
+
+        <div class="col-md-12 mb-4">
+            <h3 class="text-center">STUDENT ENROLLMENT FORM</h3>
+        </div>
         <div class="form-group d-none" id="displayPhotoSection">
             <label for="uploadedPhoto"></label>
             <label id="clickToChangeLabel" class="float-right" style="cursor: pointer;"></label>
             <img id="uploadedPhoto" class="img-fluid float-right" src="#" alt="Uploaded Photo">
         </div>
-      
-
 
         <!-- Display Uploaded Photo -->
-
         <div class="form-group text-right">
             <label for="photo"></label>
             <div class="custom-file col-12" style="width: 195px;">
@@ -117,7 +116,7 @@
         </div> -->
 
 
-        <form method="POST" action="student.php" class="m-5">
+        <form method="POST" action="student.php" class="m-5" style="margin-top: 100px;">
             <div class="form-group">
                 <!-- <div class="container">
                     <div class="row">
@@ -139,7 +138,9 @@
                 </div> -->
 
                 <!-- <label for="Training Course">Training course for:</label> -->
-                <div class="form-group row" style="margin-top: 150px;">
+
+
+                <!-- <div class="form-group row" style="margin-top: 150px;">
                     <label class="col-sm-4 col-form-label">
                         <h5>Training course for :</h5>
                     </label>
@@ -162,6 +163,54 @@
                             <option value="Power BI">Power BI</option>
                             <option value="Soft Testing">Software Testing</option>
                         </select>
+                    </div>
+                </div> -->
+
+                <div class="col-md-6" style="margin-top: 200px;">
+                    <div class="form-group row">
+                        <label class=" col-form-label">
+                            <h5>Training course for :</h5>
+                        </label>
+                        <div class="col-md-6">
+                            <select class="form-control" style="width: 20rem;" id="trainingCourse1"
+                                name="trainingCourse1">
+                                <option value="" selected>Select the course</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Digital Marketing + Web Development">Digital Marketing + Web
+                                    Development
+                                </option>
+                                <option value="Full Stack Development(java/phython)">Full Stack
+                                    Development(java/phython)
+                                </option>
+                                <option value="Data Science (Basic to Advance)">Data Science(Basic to Advance)
+                                </option>
+                                <option value="(Integrated) Data Science">(Integrated) Data Science</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="PMO">PMO</option>
+                                <option value="SAP S4 hana">SAP S4 hana</option>
+                                <option value="Salesforce(including certification)">Salesforce(including
+                                    certification)
+                                </option>
+                                <option value="AWS">AWS</option>
+                                <option value="Power BI">Power BI</option>
+                                <option value="Soft Testing">Software Testing</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row text-center">
+                        <label class=" col-form-label">
+                            <h5>Fees : </h5>
+                        </label>
+                        <div class="col-md-8">
+                            <select class="form-control" style="width: 20rem; margin-left: 130px;" id="trainingCourse2"
+                                name="trainingCourse2">
+                                <option value="" selected>Select the course</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Digital Marketing + Web Development">Digital Marketing + Web
+                                    Development</option>
+                                <!-- Other options... -->
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -320,7 +369,7 @@
             </div>
             <hr>
             <div class="table-responsive form-group">
-                <table class="table table-bordered  table-striped">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Institute Name</th>
@@ -401,7 +450,7 @@
 
             <h5 class="mb-3">D) Achievements and Extra Curricular Activity Details</h5>
             <div class="table-responsive">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Achievements/Scholarship/Prizes</th>
@@ -422,7 +471,7 @@
 
 
             <h5 class="mb-3">E) Lingual Skills</h5>
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Languages</th>
@@ -720,7 +769,7 @@
 
             <!-- Preferred payment section -->
             <div class="form-group">
-                <h5>I) Payment Details:</h5>
+                <h5 class="mb-3">I) Payment Details:</h5>
             </div>
             <hr>
 
@@ -765,7 +814,7 @@
             <hr>
 
             <div class="table-responsive form-group">
-                <table class="table table-bordered  table-striped">
+                <table class="table table-bordered  ">
                     <thead>
                         <tr>
                             <th>Fee</th>
@@ -839,7 +888,7 @@
 
 
             <div class="table-responsive form-group">
-                <table class="table table-bordered  table-striped">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>EMI</th>
@@ -909,113 +958,409 @@
             </div>
             <hr>
 
-            <h4 class="mb-3">RULES AND REGULATIONS:</h4>
-            <hr>
-            <h5>A. Payment Schedule:</h5>
-            • Enrollment fee needs to be deposited with Enrollment Form • Fee is Non Refundable under any
-            circumstances.<br>
-            • Radiant IT Services PVT LTD will only introduce the student to BANK for the loan
-            procedure.<br>
-            • Initiating and completing the loan procedure within stipulated time is the sole responsibility of the
-            student.<br>
-            • Submitting the required documents for the loan procedure and arranging
-            suitable guarantor, as required by BANK is the sole responsibility of the student.<br>
-            • Students have to pay a full course within 60 days of the start of the batch; to continue in the batch.<br>
-            • Applicants need to make the necessary payment as per the prescribed dates. <br>
-            • Incase applicant fails to pay training fees, the admission would be
-            canceled without refund of any kind. <br>
-            All Fees transactions to be carried out to Radiant Account provided by
-            the management, any transaction to personal account shall not be considered.<br>
-            • Cheque/DD to be drawn in favor of "RADIANT IT SERVICES PVT LTD"<br>
-            <br>
-            <h4>B. Fees Excursions:</h4>
-            • The fee does not cover the prospectus cost, industrial visits, excursions, pocket money, extra
-            subject/learning
-            support, weekend outing/trips, transportation,
-            workshops/seminars, extra tutorial and medical expenses of any sort.<br>
-            • The fee is applicable for the training program being conducted by RADIANT IT SERVICES PVT LTD. <br>
-            •RADIANT IT SERVICES PVT LTD reserves the right to revise or amend the fee
-            schedule, if required.<br>
-            <br>
+            <h3 class="mb-3 text-center">Rules and Regulations</h3>
+            <!-- <hr> -->
+            <!-- <h4>A. Payment Schedule</h4>
+            <div class="ml-5">
+
+                <li>Enrollment fee needs to be deposited with Enrollment Form </li>
+                <li>Fee is <strong>Non Refundable</strong> under any
+                    circumstances.<br></li>
+                <li>Radiant IT Services PVT LTD will only introduce the student to BANK for the loan
+                    procedure.</li>
+                <li>Initiating and completing the loan procedure within stipulated time is the sole <div class="ml-4">
+                        responsibility of the student.</div>
+                </li>
+                <li>Submitting the required documents for the loan procedure and arranging suitable guarantor, as <div
+                        class="ml-4">required by BANK is the sole responsibility of the student.
+                    </div>
+
+                </li>
+                <li>Students have to pay a full course within 60 days of the start of the batch; to continue in the
+                    batch.
+                </li>
+                <li>Applicants need to make the necessary payment as per the prescribed dates.</li>
+                <li>Incase applicant fails to pay training fees, the admission would be
+                    canceled without refund of any <div class="ml-4">kind.</div>
+                </li>
+                <li>All Fees transactions to be carried out to Radiant Account provided by
+                    the management, any transaction <div class="ml-4">to personal account shall not be considered.</div>
+                </li>
+                <li>Cheque / DD to be drawn in favor of <strong>"RADIANT IT SERVICES PVT LTD"</strong></li>
+            </div> -->
+
+
+
+
+
+
+            <h5 class="mb-3">A. Payment Schedule</h5>
+            <div class="ml-5">
+                <ul style=" padding-left: 0;">
+                    <li>
+                        <p style="text-align: justify;">
+                            Enrollment fee needs to be deposited with Enrollment Form
+                        </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Fee is Non Refundable under any circumstances.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Radiant IT Services PVT LTD will only introduce the student to BANK for the loan procedure.
+                        </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Initiating and completing the loan procedure within stipulated time is the sole
+                            responsibility of the student. </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Submitting the required documents for the loan procedure and arranging suitable guarantor,
+                            as
+                            required by BANK is the sole responsibility of the student. </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Students have to pay a full course within 60 days of the start of the batch; to continue in
+                            the batch. </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Applicants need to make the necessary payment as per the prescribed dates. </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Incase applicant fails to pay training fees, the admission would be canceled without refund
+                            of any
+                            kind. </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            All Fees transactions to be carried out to Radiant Account provided by the management, any
+                            transaction
+                            to personal account shall not be considered. </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Cheque / DD to be drawn in favor of "RADIANT IT SERVICES PVT LTD" </p>
+
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <h4 class="mt-3 ">B. Fees Excursions</h4>
+            <div class="ml-5">
+                <li>The fee does not cover the prospectus cost, industrial visits, excursions, pocket money, extra
+                    subject /
+                    <div class="ml-4">learning support, weekend outing/trips, transportation, workshops/seminars, extra
+                        tutorial and medical expenses of any sort.</div>
+                </li>
+                <li>The fee is applicable for the training program being conducted by RADIANT IT SERVICES PVT LTD. <br>
+                <li>RADIANT IT SERVICES PVT LTD reserves the right to revise or amend the fee
+                    schedule, if required.</li>
+            </div> -->
+
+
+
+
+
+            <h5 class="mb-3">B. Fees Excursions</h5>
+            <div class="ml-5">
+                <ul style=" padding-left: 0;">
+                    <li>
+                        <p style="text-align: justify;">
+                            The fee does not cover the prospectus cost, industrial visits, excursions, pocket money,
+                            extra subject /
+                            learning support, weekend outing/trips, transportation, workshops/seminars, extra tutorial
+                            and medical expenses of any sort.
+                        </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            The fee is applicable for the training program being conducted by RADIANT IT SERVICES PVT
+                            LTD.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            RADIANT IT SERVICES PVT LTD reserves the right to revise or amend the fee schedule, if
+                            required.</p>
+
+                    </li>
+
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 
             <h4>C. Students Decorums:</h4>
-            •The student is expected to maintain discipline and decorum at all times.<br>
-            •The RADIANT IT SERVICES PVT LTD reserves the right to cancel the admission
-            without a refund in case the student fails to abide by the rules and regulations of RADIANT IT SERVICES PVT
-            LTD.<br>
-            • The fee payment should be made in due time period as notified to students.<br>
-            In case of a loan getting rejected by the bank it is the responsibility of the student to search for options
-            for fee
-            payment.<br>
-            <br>
-            <h4>D. Students Decorums: </h4>
-            •Students have to submit a soft copy of their Educational documents to RADIANT
-            IT SERVICES PVT LTD. Students will not be allowed to sit for the batch unless
-            and until the documents are submitted for verification.<br>
-            • It is mandatory for the student to appear for all the assessments during and after the
-            training sessions.<br>
-            • Students are required to appear on the interviews on the mentioned dates as
-            informed by the placement department at any location.<br>
-            • The student is supposed to join the organization at any location for which he/she
-            has been selected on the mentioned date as informed.<br>
-            •Students understand that salary packages and job location may vary; It is not in control of the institute.
-            It is
-            the responsibility of the student to earn a higher package by virtue of performance.<br>
-            • Students are expected to follow and fulfill the attendance required during the entire duration of the
-            program.
-            Students cannot take more than two leaves in a month. If a student fails to inform RADIANT IT SERVICES PVT
-            LTD, hr /
-            management and take permission about his absence for more than 3 times, this will be taken as a serious
-            behavioral
-            issue and may lead to cancellation of agreement and without refund of fees and students support amount will
-            be
-            stopped with immediate effect.<br>
-            • RADIANT IT SERVICES PVT LTD reserves the right to take necessary action
-            (civil or criminal) if a student is found indulged in immoral activities.<br>
-            •Students should not participate in any political activities or from union or group and should not be part
-            of any
-            political gathering, during his tenure with RADIANT IT SERVICES PVT LTD.<br>
-            • The admission stands canceled in case of data infringement, circulating RADIANT IT SERVICES PVT LTD
-            printed non
-            printed material outside. In case of sharing training patterns and modules to third parties or starting
-            their own
-            competitive business similar to the business model of RADIANT IT SERVICES PVT LTD or its associates.<br>
-            <br>
+            <div class="ml-5">
 
+                <li>The student is expected to maintain discipline and decorum at all times.</li>
+                <li>The RADIANT IT SERVICES PVT LTD reserves the right to cancel the admission
+                    without a refund <div class="ml-4">in case the student fails to abide by the rules and regulations
+                        of RADIANT IT SERVICES PVT. LTD.</div>
+                </li>
+                <li>The fee payment should be made in due time period as notified to students.
+                    In case of a loan getting <div class="ml-4"> rejected by the bank it is the responsibility of the
+                        student to search for
+                        options for fee payment.</div>
+                </li>
+            </div> -->
+
+
+
+
+
+
+            <h5 class="mb-3">C. Students Decorums:</h5>
+            <div class="ml-5">
+                <ul style=" padding-left: 0;">
+                    <li>
+                        <p style="text-align: justify;">
+                            The student is expected to maintain discipline and decorum at all times.
+                        </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            The RADIANT IT SERVICES PVT LTD reserves the right to cancel the admission without a refund
+                            in case the student fails to abide by the rules and regulations of RADIANT IT SERVICES PVT.
+                            LTD.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            The fee payment should be made in due time period as notified to students. In case of a loan
+                            getting
+                            rejected by the bank it is the responsibility of the student to search for options for fee
+                            payment.</p>
+
+                    </li>
+
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h5 class="mb-3">D. Students Decorums :</h5>
+            <div class="ml-5">
+                <ul style=" padding-left: 0;">
+                    <li>
+                        <p style="text-align: justify;">
+                            Students have to submit a soft copy of their Educational documents to <strong> RADIANT IT
+                                SERVICES
+                                PVT. LTD.</strong> students will not be allowed to sit for the batch unless and until
+                            the documents are
+                            submitted for verification.
+                        </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            It is mandatory for the student to appear for all the assessments during and after the
+                            training sessions.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Students are required to appear on the interviews on the mentioned dates as informed by the
+                            placement department at any location.The student is supposed to join the organization at any
+                            location for which he/she has been
+                            selected on the mentioned date as informed.</p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Students understand that salary packages and job location may vary; It is not in control of
+                            the institute. It is the responsibility of the student to earn a higher package by virtue of
+                            performance.
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Students are expected to follow and fulfill the attendance required during the entire
+                            duration of the program. Students cannot take more than two leaves in a month. If a student
+                            fails to inform RADIANT IT SERVICES PVT LTD, HR/management and take permission about his
+                            absence for more than 3 times, this will be taken as a serious behavioral issue and may lead
+                            to cancellation of agreement and without refund of fees, and student support amount will be
+                            stopped with immediate effect.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            RADIANT IT SERVICES PVT LTD reserves the right to take necessary action (civil or criminal)
+                            if a student is found indulged in immoral activities.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            Students should not participate in any political activities or form unions or groups and
+                            should not be part of any political gathering during their tenure with RADIANT IT SERVICES
+                            PVT LTD.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            The admission stands canceled in case of data infringement, circulating RADIANT IT SERVICES
+                            PVT LTD printed or non-printed material outside. In case of sharing training patterns and
+                            modules with third parties or starting their own competitive business similar to the
+                            business model of RADIANT IT SERVICES PVT LTD or its associates.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+<!-- 
             <h4>E. Important Information and Instructions:</h4>
-            1. Do not send original documents/ mark sheets/ certificates by post or courier.<br>
-            2. The application form will be processed only on submission of copies of
-            all documents and records mentioned. <br>
-            3. Admission is subject to fulfillment of the criteria and availability of seats.<br>
-            4. No terms and conditions mentioned above will be waived under any circumstances whatsoever.<br>
-            <br>
-            <h3>Undertaking</h3>
-            I hereby undertake I have applied for the Training Program with RADIANT IT SERVICES PVT LTD. I understand
-            that fees
-            paid are the charges of training, Job/ placement call is a free service offered by RADIANT IT SERVICES PVT
-            LTD to
-            all the students and there is no cost involved for placements. I have read the rules & regulations of
-            RADIANT IT
-            SERVICES PVT LTD and shall abide by them in letter and spirit. I shall also abide by the rules modified or
-            framed in
-            future. I shall pay the fees and other changes before specified dates. I shall submit my original documents
-            for
-            verification when informed and can be shared with employer companies. I understand that a
-            payment made is not refundable. I shall abide by the rules and regulations mentioned above and
-            also mentioned in agreement. This undertaking abides with me for my entire program duration.
+            <div class="ml-4">
+                <ol style="list-style-type: decimal;">
+                    <li>
+                        Do not send original documents/ mark sheets/ certificates by post or courier.
+                    </li>
+                    <li>
+                        The application form will be processed only on submission of copies of all documents and records mentioned.
+                    </li>
+                    <li>
+                        Admission is subject to fulfillment of the criteria and availability of seats.
+                    </li>
+                    <li>
+                        No terms and conditions mentioned above will be waived under any circumstances whatsoever.
+                    </li>
+                </ol>
+            </div> -->
 
+
+            
+            <h5 class="mb-3">E. Important Information and Instructions :</h5>
+            <div class="ml-5 mb-5">
+                <ol style=" padding-left: 0; list-style-type: decimal;">
+                    <li>
+                        <p style="text-align: justify;">
+                            Do not send original documents/ mark sheets/ certificates by post or courier.
+                        </p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            The application form will be processed only on submission of copies of all documents and records mentioned.
+                        </p>
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                           Admission is subject to fulfillment of the criteria and availability of seats.</p>
+
+                    </li>
+                    <li>
+                        <p style="text-align: justify;">
+                            No terms and conditions mentioned above will be waived under any circumstances whatsoever.</p>
+
+                    </li>
+                </ul>
+            </div>
+            
+
+
+            <h5 class="text-center mb-3">Undertaking</h5>
+            <p style="text-align: justify;">
+                I hereby undertake I have applied for the Training Program with <strong>RADIANT IT SERVICES PVT. LTD.</strong> I understand
+                that fees paid are the charges of training, Job/ placement call is a free service offered by <strong> RADIANT IT SERVICES
+                PVT. LTD.</strong> strong to all the students and there is no cost involved for placements. I have read the rules & regulations of
+                <strong> RADIANT IT SERVICES PVT. LTD.</strong> and shall abide by them in letter and spirit. I shall also abide by the rules modified
+                or framed in future. I shall pay the fees and other changes before specified dates. I shall submit my original
+                documents for verification when informed and can be shared with employer companies. I understand that a
+                payment made is not refundable. I shall abide by the rules and regulations mentioned above and
+                also mentioned in the agreement. This undertaking abides with me for my entire program duration.
+                <!-- <p>Radiant IT Services Pvt. Ltd.<br>
+                    Kolte Patil, Downtown City Vista, Office No. 13/14, 6th Floor, "B" Building, Fountain Road, opp.
+                    Victorious Kids School, Kharadi, Pune, Maharashtra 411014</p> -->
             </p>
 
             <footer>
-
-                <p>Radiant IT Services Pvt. Ltd.<br>
-                    Kolte Patil, Downtown City Vista, Office No. 13/14, 6th Floor, "B" Building, Fountain Road, opp.
-                    Victorious Kids School, Kharadi, Pune, Maharashtra 411014</p>
-
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
                             <input type="file" id="signature" name="signature">
-
                             Signature of Candidate
                         </div>
                         <div class="col-md-6">
@@ -1088,6 +1433,7 @@
             var selectedDateInput = document.getElementById("selectedDate");
             selectedDateInput.min = today.toISOString().split("T")[0];
             selectedDateInput.max = maxDate.toISOString().split("T")[0];
+
         </script>
 
 
